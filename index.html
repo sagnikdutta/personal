@@ -1,1 +1,600 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sagnik Dutta | Product Thinker &amp; Platform Leader</title>
+<meta name="description" content="Sagnik Dutta — Senior Platform Lead / Product Owner at Publicis Sapient. 13 years across engineering, integration architecture and product management. Bengaluru, India.">
+<meta property="og:title" content="Sagnik Dutta | Product Thinker &amp; Platform Leader">
+<meta property="og:description" content="Building scalable enterprise products at the intersection of platform engineering, product strategy and AI.">
+<meta property="og:type" content="profile">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%236366F1'/%3E%3Ctext x='16' y='21.5' font-family='Inter,Arial' font-weight='700' font-size='14' fill='%23fff' text-anchor='middle'%3ESD%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
+<style>
+/* ============ tokens ============ */
+:root{
+  --indigo:#6366F1;
+  --cyan:#22D3EE;
+  --grad:linear-gradient(135deg,#6366F1 0%,#22D3EE 100%);
+  --radius:18px;
+  --maxw:74rem;
+  --ease:cubic-bezier(.22,.68,.28,1);
+}
+html[data-theme="dark"]{
+  --bg:#0A0E1A;
+  --bg-2:#0E1424;
+  --surface:rgba(255,255,255,.035);
+  --surface-2:rgba(255,255,255,.06);
+  --border:rgba(255,255,255,.09);
+  --border-strong:rgba(255,255,255,.16);
+  --text:#EEF1F8;
+  --muted:#98A2B8;
+  --faint:#6B7690;
+  --accent:#818CF8;
+  --accent-soft:rgba(99,102,241,.14);
+  --shadow:0 18px 50px rgba(0,0,0,.45);
+  --glow:radial-gradient(60% 55% at 18% 0%,rgba(99,102,241,.26),transparent 70%),
+         radial-gradient(48% 45% at 92% 12%,rgba(34,211,238,.16),transparent 70%);
+}
+html[data-theme="light"]{
+  --bg:#FBFBFD;
+  --bg-2:#F3F5F9;
+  --surface:#FFFFFF;
+  --surface-2:#F5F7FB;
+  --border:rgba(16,24,40,.10);
+  --border-strong:rgba(16,24,40,.18);
+  --text:#101828;
+  --muted:#5A667E;
+  --faint:#7C88A0;
+  --accent:#4F46E5;
+  --accent-soft:rgba(99,102,241,.10);
+  --shadow:0 14px 40px rgba(16,24,40,.09);
+  --glow:radial-gradient(60% 55% at 18% 0%,rgba(99,102,241,.14),transparent 70%),
+         radial-gradient(48% 45% at 92% 12%,rgba(34,211,238,.12),transparent 70%);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:5.5rem;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:"Inter",system-ui,sans-serif;font-size:16px;line-height:1.7;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  transition:background .3s var(--ease),color .3s var(--ease);
+}
+h1,h2,h3,h4,.jakarta{font-family:"Plus Jakarta Sans","Inter",sans-serif;line-height:1.15;letter-spacing:-.022em;margin:0}
+p{margin:0 0 1rem}
+ul{margin:0;padding:0;list-style:none}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+
+.wrap{width:min(100% - 2.5rem,var(--maxw));margin-inline:auto}
+.skip{position:absolute;left:-9999px;background:var(--accent);color:#fff;padding:.6rem 1rem;z-index:200;border-radius:8px}
+.skip:focus{left:1rem;top:1rem}
+
+/* ============ nav ============ */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:100;
+  background:color-mix(in srgb,var(--bg) 78%,transparent);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid transparent;transition:border-color .3s,background .3s;
+}
+.nav.stuck{border-bottom-color:var(--border)}
+.nav .wrap{display:flex;align-items:center;gap:1rem;min-height:4.4rem}
+.brand{display:flex;align-items:center;gap:.65rem;font-family:"Plus Jakarta Sans";font-weight:700;font-size:.98rem}
+.brand .dot{
+  width:2rem;height:2rem;border-radius:9px;background:var(--grad);
+  display:grid;place-items:center;color:#fff;font-size:.76rem;font-weight:800;letter-spacing:.02em;
+}
+.menu{display:flex;gap:.25rem;margin-left:auto}
+.menu a{
+  padding:.45rem .8rem;border-radius:99px;font-size:.9rem;font-weight:500;color:var(--muted);
+  transition:color .2s,background .2s;
+}
+.menu a:hover{color:var(--text);background:var(--surface-2)}
+.menu a.active{color:var(--text);background:var(--accent-soft)}
+.nav-actions{display:flex;align-items:center;gap:.6rem;margin-left:.4rem}
+.icon-btn{
+  width:2.3rem;height:2.3rem;display:grid;place-items:center;border-radius:10px;
+  border:1px solid var(--border);background:var(--surface);color:var(--muted);cursor:pointer;
+  transition:color .2s,border-color .2s;
+}
+.icon-btn:hover{color:var(--text);border-color:var(--border-strong)}
+.icon-btn svg{width:1.05rem;height:1.05rem}
+html[data-theme="dark"] .sun{display:block}
+html[data-theme="dark"] .moon{display:none}
+html[data-theme="light"] .sun{display:none}
+html[data-theme="light"] .moon{display:block}
+#burger{display:none}
+
+.btn{
+  display:inline-flex;align-items:center;gap:.45rem;
+  padding:.62rem 1.15rem;border-radius:99px;font-size:.9rem;font-weight:600;
+  font-family:"Plus Jakarta Sans";border:1px solid transparent;cursor:pointer;
+  transition:transform .2s var(--ease),box-shadow .2s,background .2s,border-color .2s,color .2s;
+}
+.btn-primary{background:var(--grad);color:#0A0E1A;box-shadow:0 6px 22px rgba(99,102,241,.30)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(99,102,241,.42)}
+.btn-ghost{border-color:var(--border-strong);color:var(--text);background:var(--surface)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+
+@media (max-width:56rem){
+  #burger{display:grid}
+  .menu{
+    position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:.15rem;
+    background:var(--bg);border-bottom:1px solid var(--border);padding:.8rem 1.25rem 1.1rem;
+    display:none;
+  }
+  .menu.open{display:flex}
+  .menu a{padding:.6rem .8rem}
+  .nav .btn-primary{display:none}
+}
+
+/* ============ hero ============ */
+.hero{position:relative;padding:9rem 0 4.5rem;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-30% -10% auto -10%;height:120%;background:var(--glow);pointer-events:none}
+.hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);
+  background-size:64px 64px;
+  -webkit-mask-image:radial-gradient(70% 60% at 50% 8%,#000,transparent 75%);
+  mask-image:radial-gradient(70% 60% at 50% 8%,#000,transparent 75%);
+}
+.hero .wrap{position:relative;z-index:1}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:.55rem;
+  padding:.4rem .9rem .4rem .55rem;border-radius:99px;
+  border:1px solid var(--border);background:var(--surface);
+  font-size:.82rem;font-weight:500;color:var(--muted);margin-bottom:1.6rem;
+}
+.pulse{width:.5rem;height:.5rem;border-radius:50%;background:#34D399;box-shadow:0 0 0 4px rgba(52,211,153,.16)}
+.hero h1{
+  font-size:clamp(2.3rem,6.2vw,4.3rem);font-weight:800;max-width:17ch;margin-bottom:1.3rem;
+}
+.hero h1 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lead{font-size:clamp(1.02rem,1.6vw,1.16rem);color:var(--muted);max-width:58ch;margin-bottom:2rem}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:2.8rem}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem}
+.tag{
+  padding:.34rem .78rem;border-radius:99px;border:1px solid var(--border);
+  background:var(--surface);font-size:.8rem;color:var(--muted);font-weight:500;
+}
+
+/* ============ stats ============ */
+.stats{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(11rem,1fr));
+  gap:1px;background:var(--border);border:1px solid var(--border);
+  border-radius:var(--radius);overflow:hidden;margin-top:3.5rem;
+}
+.stat{background:var(--bg);padding:1.5rem 1.4rem;transition:background .25s}
+.stat:hover{background:var(--surface-2)}
+.stat b{
+  display:block;font-family:"Plus Jakarta Sans";font-size:clamp(1.6rem,3.4vw,2.1rem);
+  font-weight:800;letter-spacing:-.03em;line-height:1.1;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.stat span{display:block;font-size:.86rem;color:var(--muted);margin-top:.35rem;line-height:1.5}
+
+/* ============ sections ============ */
+section{padding:clamp(3.5rem,8vw,6rem) 0;position:relative}
+.alt{background:var(--bg-2)}
+.sec-head{margin-bottom:2.8rem;max-width:60ch}
+.kicker{
+  display:inline-flex;align-items:center;gap:.5rem;font-family:"Plus Jakarta Sans";
+  font-size:.8rem;font-weight:700;color:var(--accent);letter-spacing:.06em;margin-bottom:.9rem;
+}
+.kicker i{width:1.6rem;height:2px;background:var(--grad);border-radius:2px;font-style:normal}
+.sec-head h2{font-size:clamp(1.75rem,3.8vw,2.55rem);font-weight:800;margin-bottom:.75rem}
+.sec-head p{color:var(--muted);margin:0}
+
+.card{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  padding:1.6rem;transition:border-color .25s,transform .25s var(--ease),box-shadow .25s;
+}
+.card:hover{border-color:var(--border-strong);transform:translateY(-3px);box-shadow:var(--shadow)}
+.card h3{font-size:1.08rem;font-weight:700;margin-bottom:.5rem}
+.card p{color:var(--muted);font-size:.95rem;margin:0}
+
+.duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(19rem,1fr));gap:1.1rem;margin-top:1.6rem}
+.duo .tags{margin-top:1rem}
+
+.about-body p{color:var(--muted);max-width:66ch;font-size:1.02rem}
+
+/* ============ timeline ============ */
+.timeline{position:relative;padding-left:2.2rem}
+.timeline::before{
+  content:"";position:absolute;left:.42rem;top:.6rem;bottom:.6rem;width:2px;
+  background:linear-gradient(180deg,var(--accent),transparent);opacity:.55;
+}
+.tl-item{position:relative;margin-bottom:1.1rem}
+.tl-item::before{
+  content:"";position:absolute;left:-2.2rem;top:1.55rem;width:.9rem;height:.9rem;border-radius:50%;
+  background:var(--bg);border:2px solid var(--accent);
+}
+.tl-item.now::before{background:var(--grad);border-color:transparent;box-shadow:0 0 0 5px var(--accent-soft)}
+.tl-top{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;margin-bottom:.15rem}
+.tl-when{
+  font-family:"Plus Jakarta Sans";font-size:.78rem;font-weight:600;color:var(--accent);
+  background:var(--accent-soft);padding:.2rem .62rem;border-radius:99px;
+}
+.badge-now{
+  font-family:"Plus Jakarta Sans";font-size:.72rem;font-weight:700;color:#0A0E1A;
+  background:var(--grad);padding:.2rem .6rem;border-radius:99px;
+}
+.tl-item h3{font-size:1.15rem;font-weight:700;margin-bottom:.2rem}
+.tl-org{font-size:.92rem;color:var(--muted);font-weight:500;margin-bottom:.8rem}
+.tl-org b{color:var(--text);font-weight:600}
+.bullets li{position:relative;padding-left:1.25rem;color:var(--muted);font-size:.95rem;margin-bottom:.4rem}
+.bullets li:last-child{margin-bottom:0}
+.bullets li::before{
+  content:"";position:absolute;left:.1rem;top:.72em;width:.42rem;height:.42rem;
+  border-radius:50%;background:var(--accent);opacity:.8;
+}
+@media (max-width:34rem){ .timeline{padding-left:1.6rem} .tl-item::before{left:-1.6rem} }
+
+/* ============ focus grid ============ */
+.focus{display:grid;grid-template-columns:repeat(auto-fit,minmax(16.5rem,1fr));gap:1.1rem}
+.focus .card{position:relative;padding-top:1.9rem}
+.focus .num{
+  font-family:"Plus Jakarta Sans";font-size:.78rem;font-weight:800;color:var(--accent);
+  letter-spacing:.08em;display:block;margin-bottom:.6rem;
+}
+
+/* ============ background ============ */
+.back-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr));gap:1.1rem}
+.list li{padding:.85rem 0;border-bottom:1px solid var(--border)}
+.list li:last-child{border-bottom:0;padding-bottom:0}
+.list strong{display:block;font-family:"Plus Jakarta Sans";font-size:.98rem;font-weight:600}
+.list small{display:block;font-size:.86rem;color:var(--muted);margin-top:.15rem}
+
+/* ============ contact ============ */
+.cta{
+  border:1px solid var(--border);border-radius:26px;padding:clamp(2.2rem,5vw,3.6rem);
+  background:
+    radial-gradient(70% 120% at 15% 0%,rgba(99,102,241,.20),transparent 65%),
+    radial-gradient(60% 110% at 95% 100%,rgba(34,211,238,.16),transparent 65%),
+    var(--surface);
+  text-align:center;
+}
+.cta h2{font-size:clamp(1.7rem,4.2vw,2.6rem);font-weight:800;margin-bottom:.8rem}
+.cta p{color:var(--muted);max-width:48ch;margin:0 auto 2rem}
+.cta .hero-cta{justify-content:center;margin-bottom:0}
+
+footer{border-top:1px solid var(--border);padding:1.8rem 0;background:var(--bg)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;justify-content:space-between;align-items:center}
+footer p{margin:0;font-size:.86rem;color:var(--faint)}
+footer a{font-size:.86rem;color:var(--muted)}
+footer a:hover{color:var(--accent)}
+
+/* ============ reveal ============ */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  *{animation:none!important}
+  .card:hover,.btn:hover{transform:none}
+}
+</style>
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="dot">SD</span>Sagnik Dutta</a>
+
+    <nav class="menu" id="menu" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#focus">Focus</a>
+      <a href="#background">Background</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="icon-btn" id="theme" aria-label="Switch colour theme">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+      <button class="icon-btn" id="burger" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <a class="btn btn-primary" href="#contact">Let's connect</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <span class="eyebrow"><span class="pulse"></span>Senior Platform Lead / Product Owner — Bengaluru, India</span>
+
+    <h1>Building enterprise platforms that <span class="grad">businesses can trust.</span></h1>
+
+    <p class="lead">Thirteen years from software engineering through integration architecture into product management. I work where product strategy, engineering and enterprise transformation meet — turning complex systems into products teams can actually rely on.</p>
+
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#experience">View experience</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/sagnik-dutta-product-thinker" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+
+    <ul class="tags">
+      <li class="tag">Enterprise integration</li>
+      <li class="tag">Platform migration</li>
+      <li class="tag">API strategy</li>
+      <li class="tag">AWS &amp; cloud</li>
+      <li class="tag">Generative &amp; agentic AI</li>
+    </ul>
+
+    <ul class="stats reveal">
+      <li class="stat"><b>13 yrs</b><span>Across engineering, architecture and product</span></li>
+      <li class="stat"><b>50+ APIs</b><span>Migrated to MuleSoft Runtime Fabric on AWS</span></li>
+      <li class="stat"><b>Zero</b><span>Production disruptions during that migration</span></li>
+      <li class="stat"><b>80%</b><span>Reduction in reporting cycle time</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker"><i></i>01 — About</span>
+      <h2>A career built on removing complexity.</h2>
+      <p>Product work isn't measured by features shipped. It's measured by complexity removed, decisions made easier, and value created for customers and the business.</p>
+    </div>
+
+    <div class="about-body reveal">
+      <p>I started in engineering, moved into integration architecture, and grew into product management. Each step changed how I think about technology, customer value and business outcomes — and the through-line has stayed the same: turn technology into something a business can actually use.</p>
+      <p>Today I lead platform and product direction on large enterprise programmes. That means creating clarity for cross-functional teams, aligning people around outcomes instead of output, and building platforms the rest of the organisation can build on.</p>
+    </div>
+
+    <div class="duo">
+      <article class="card reveal">
+        <h3>How I think</h3>
+        <p>Outcome-focused and grounded in the engineering reality underneath. I'd rather cut a feature and simplify the system than ship complexity forward.</p>
+        <ul class="tags">
+          <li class="tag">Product strategy</li>
+          <li class="tag">Systems thinking</li>
+          <li class="tag">Stakeholder alignment</li>
+          <li class="tag">Delivery</li>
+        </ul>
+      </article>
+      <article class="card reveal">
+        <h3>Where I work</h3>
+        <p>Large enterprise transformation programmes — integration platforms, API estates and the cloud migrations that carry them, delivered with distributed teams.</p>
+        <ul class="tags">
+          <li class="tag">Enterprise platforms</li>
+          <li class="tag">Cross-functional teams</li>
+          <li class="tag">Cloud migration</li>
+          <li class="tag">Agile / Scrum</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker"><i></i>02 — Experience</span>
+      <h2>From code to product leadership.</h2>
+      <p>A progression from writing software to owning customer problems, platform direction and business outcomes.</p>
+    </div>
+
+    <div class="timeline">
+
+      <article class="tl-item now reveal">
+        <div class="card">
+          <div class="tl-top">
+            <span class="tl-when">Nov 2019 — Present</span>
+            <span class="badge-now">Current</span>
+          </div>
+          <h3>Senior Platform Lead / Product Owner</h3>
+          <p class="tl-org"><b>Publicis Sapient</b> — Bengaluru, India</p>
+          <ul class="bullets">
+            <li>Own platform and product direction across enterprise integration programmes.</li>
+            <li>Led the migration of five enterprise applications and 50+ APIs to MuleSoft Runtime Fabric on AWS with zero production disruption.</li>
+            <li>Cut reporting cycle times by more than 80% for the business teams that depend on them.</li>
+            <li>Improved delivery predictability across large cross-functional programmes.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="tl-item reveal">
+        <div class="card">
+          <div class="tl-top"><span class="tl-when">Nov 2015 — Nov 2019</span></div>
+          <h3>Senior Software Engineer</h3>
+          <p class="tl-org"><b>Cognizant</b> — Bengaluru, India</p>
+        </div>
+      </article>
+
+      <article class="tl-item reveal">
+        <div class="card">
+          <div class="tl-top"><span class="tl-when">Jun 2014 — Nov 2015</span></div>
+          <h3>Software Developer</h3>
+          <p class="tl-org"><b>Codeclouds IT Solutions</b> — Kolkata, India</p>
+          <ul class="bullets">
+            <li>Full-stack development in an agile team, end to end across the product.</li>
+            <li>Built the publishing workflow connecting reporters, writers, strategists and network managers.</li>
+            <li>Automated brand creation and sync between the brand section and publisher platform.</li>
+            <li>Built demographic dashboards from client data and handled lead creation in Salesforce CRM.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="tl-item reveal">
+        <div class="card">
+          <div class="tl-top"><span class="tl-when">Mar 2013 — Jun 2014</span></div>
+          <h3>Application Researcher and Developer</h3>
+          <p class="tl-org"><b>Twinixsoft Consulting &amp; Solution</b> — Kolkata, India</p>
+          <ul class="bullets">
+            <li>Worked on a social platform built around real-life spaces, shared interests and stronger privacy controls.</li>
+            <li>Designed the product architecture alongside the product architect.</li>
+            <li>Handled UI design, business logic and end-to-end development.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="tl-item reveal">
+        <div class="card">
+          <div class="tl-top"><span class="tl-when">Jul 2012 — Mar 2013</span></div>
+          <h3>Technical Analyst</h3>
+          <p class="tl-org"><b>CMC Ltd</b> — India</p>
+          <ul class="bullets">
+            <li>Supported an ERP product used by distributors and sales staff for stock and billing.</li>
+            <li>Resolved tickets within SLA and troubleshot site issues remotely.</li>
+            <li>Ran data migrations, installations and backup restores on site.</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOCUS -->
+<section id="focus" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker"><i></i>03 — Focus</span>
+      <h2>What I bring to a product team.</h2>
+      <p>A toolkit built across engineering, integration architecture, delivery and product ownership.</p>
+    </div>
+
+    <div class="focus">
+      <article class="card reveal"><span class="num">01</span><h3>AI-native products</h3><p>Treating generative and agentic AI as core capability rather than a bolted-on feature — automating complexity and helping teams decide faster.</p></article>
+      <article class="card reveal"><span class="num">02</span><h3>Enterprise integration</h3><p>API estates, middleware and the contracts between systems. The plumbing that decides whether a platform scales or stalls.</p></article>
+      <article class="card reveal"><span class="num">03</span><h3>Platform migration</h3><p>Moving live applications to new runtimes and cloud infrastructure without the business noticing the seam.</p></article>
+      <article class="card reveal"><span class="num">04</span><h3>Product ownership</h3><p>Backlog, roadmap and prioritisation tied to outcomes, with the technical depth to hold a real conversation with engineering.</p></article>
+      <article class="card reveal"><span class="num">05</span><h3>RFPs and pre-sales</h3><p>Shaping proposals and solution responses that are honest about scope and credible on delivery.</p></article>
+      <article class="card reveal"><span class="num">06</span><h3>Agile delivery</h3><p>Scrum and programme management across distributed cross-functional teams, focused on predictable delivery.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- BACKGROUND -->
+<section id="background">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker"><i></i>04 — Background</span>
+      <h2>Education and credentials.</h2>
+      <p>Formal study alongside certifications that keep the engineering foundation current.</p>
+    </div>
+
+    <div class="back-grid">
+      <article class="card reveal">
+        <h3>Education</h3>
+        <ul class="list">
+          <li><strong>Executive MBA, Product Management</strong><small>Institute of Product Leadership · Jun 2025 — Dec 2026</small></li>
+          <li><strong>B.Tech, Information Technology</strong><small>Murshidabad College of Engineering &amp; Technology · 2006 — 2010</small></li>
+        </ul>
+      </article>
+
+      <article class="card reveal">
+        <h3>Certifications</h3>
+        <ul class="list">
+          <li><strong>AWS Certified Solutions Architect</strong><small>Associate</small></li>
+          <li><strong>AWS Certified Developer</strong><small>Associate</small></li>
+        </ul>
+      </article>
+
+      <article class="card reveal">
+        <h3>Languages</h3>
+        <ul class="list">
+          <li><strong>Hindi</strong><small>Native or bilingual</small></li>
+          <li><strong>Bengali</strong><small>Native or bilingual</small></li>
+          <li><strong>English</strong><small>Professional working</small></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="alt">
+  <div class="wrap">
+    <div class="cta reveal">
+      <h2>Let's talk products and platforms.</h2>
+      <p>If you're building something AI-native, untangling an enterprise platform, or need a product owner who understands the plumbing — I'd like to hear about it.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="mailto:sagi.rk08@gmail.com">sagi.rk08@gmail.com</a>
+        <a class="btn btn-ghost" href="tel:+919874389335">+91 98743 89335</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/sagnik-dutta-product-thinker" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© <span id="yr">2026</span> Sagnik Dutta — Product Thinker, building scalable products.</p>
+    <a href="#top">Back to top</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('theme');
+  try{ var saved=localStorage.getItem('sd-theme'); if(saved) root.setAttribute('data-theme',saved); }catch(e){}
+  btn.addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{ localStorage.setItem('sd-theme',next); }catch(e){}
+  });
+
+  var burger=document.getElementById('burger'), menu=document.getElementById('menu');
+  burger.addEventListener('click',function(){
+    var open=menu.classList.toggle('open');
+    burger.setAttribute('aria-expanded',open);
+  });
+  menu.addEventListener('click',function(e){
+    if(e.target.tagName==='A'){ menu.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
+  });
+
+  var nav=document.getElementById('nav');
+  var onScroll=function(){ nav.classList.toggle('stuck', window.scrollY>12); };
+  onScroll(); window.addEventListener('scroll',onScroll,{passive:true});
+
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items=document.querySelectorAll('.reveal');
+  if(reduce||!('IntersectionObserver' in window)){
+    items.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+    items.forEach(function(el){ io.observe(el); });
+  }
+
+  var links=[].slice.call(menu.querySelectorAll('a'));
+  var secs=links.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+  if('IntersectionObserver' in window){
+    var spy=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          links.forEach(function(a){ a.classList.remove('active'); });
+          var i=secs.indexOf(en.target);
+          if(i>-1) links[i].classList.add('active');
+        }
+      });
+    },{rootMargin:'-45% 0px -50% 0px'});
+    secs.forEach(function(s){ if(s) spy.observe(s); });
+  }
+
+  document.getElementById('yr').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
