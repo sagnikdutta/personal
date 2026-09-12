@@ -1,1 +1,674 @@
-<h1>Sagnik Dutta learning Github Pages</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sagnik Dutta — Product Thinker building scalable products at the intersection of product strategy, engineering, and enterprise transformation." />
+  <title>Sagnik Dutta — Product Thinker</title>
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-soft: #0c1728;
+      --panel: rgba(15, 29, 48, 0.72);
+      --panel-solid: #101e31;
+      --text: #edf4ff;
+      --muted: #9fb0c6;
+      --line: rgba(159, 176, 198, 0.18);
+      --accent: #58a6ff;
+      --accent-2: #7c6cff;
+      --accent-soft: rgba(88,166,255,.12);
+      --white: #fff;
+      --max: 1180px;
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 85% 10%, rgba(88,166,255,.12), transparent 30%),
+        radial-gradient(circle at 15% 35%, rgba(124,108,255,.08), transparent 28%),
+        var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(calc(100% - 40px), var(--max)); margin: 0 auto; }
+
+    /* Navigation */
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(7,17,31,.78);
+      border-bottom: 1px solid rgba(159,176,198,.1);
+    }
+    nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      font-weight: 800;
+      letter-spacing: -.03em;
+      font-size: 1.05rem;
+    }
+    .brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 28px; color: var(--muted); font-size: .92rem; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      padding: 10px 16px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--text);
+      font-size: .88rem;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: calc(100vh - 72px);
+      display: grid;
+      align-items: center;
+      padding: 90px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.35fr .65fr;
+      gap: 70px;
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: #c9d8ea;
+      background: var(--accent-soft);
+      border: 1px solid rgba(88,166,255,.2);
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 16px var(--accent);
+    }
+    h1 {
+      font-size: clamp(3.3rem, 7vw, 6.8rem);
+      line-height: .95;
+      letter-spacing: -.065em;
+      margin: 25px 0 24px;
+      max-width: 900px;
+    }
+    .gradient {
+      background: linear-gradient(110deg, #fff 15%, #9bcaff 58%, #9187ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero-copy {
+      max-width: 730px;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 1.5vw, 1.22rem);
+    }
+    .hero-copy strong { color: #dce9f8; font-weight: 600; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 13px 18px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      font-weight: 700;
+      font-size: .92rem;
+      transition: transform .2s ease, border-color .2s ease, background .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); border-color: rgba(88,166,255,.45); }
+    .btn.primary {
+      background: var(--white);
+      color: #091321;
+      border-color: transparent;
+    }
+    .btn.secondary { background: rgba(255,255,255,.03); }
+
+    .hero-card {
+      position: relative;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: linear-gradient(145deg, rgba(22,40,64,.85), rgba(9,19,33,.8));
+      box-shadow: 0 30px 90px rgba(0,0,0,.25);
+    }
+    .orb {
+      width: 150px; height: 150px;
+      border-radius: 50%;
+      margin: 5px auto 25px;
+      background:
+        radial-gradient(circle at 30% 30%, #fff 0 2%, transparent 3%),
+        radial-gradient(circle at 68% 35%, #c6dcff 0 1.5%, transparent 2%),
+        radial-gradient(circle at 45% 68%, #a99dff 0 2%, transparent 2.5%),
+        linear-gradient(135deg, #2b8cff, #6255db 70%, #171f48);
+      box-shadow: 0 0 80px rgba(88,166,255,.22), inset -20px -20px 50px rgba(0,0,0,.25);
+    }
+    .hero-card h3 { margin: 0 0 8px; font-size: 1.15rem; }
+    .hero-card p { color: var(--muted); margin: 0; font-size: .9rem; }
+    .mini-tags { display:flex; flex-wrap:wrap; gap:7px; margin-top:18px; }
+    .tag {
+      font-size: .73rem;
+      color: #c7d6e8;
+      padding: 6px 9px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,.025);
+    }
+
+    section { padding: 105px 0; }
+    .section-kicker {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: .73rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.35rem);
+      letter-spacing: -.045em;
+      line-height: 1.08;
+    }
+    .section-intro { color: var(--muted); max-width: 720px; margin: 17px 0 0; }
+
+    /* Impact */
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 42px;
+    }
+    .impact {
+      padding: 25px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+    }
+    .impact .number {
+      font-size: 2.5rem;
+      line-height: 1;
+      font-weight: 850;
+      letter-spacing: -.06em;
+    }
+    .impact p { color: var(--muted); font-size: .88rem; margin: 11px 0 0; }
+
+    /* Philosophy */
+    .split {
+      display:grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .quote {
+      font-size: clamp(1.55rem, 2.5vw, 2.3rem);
+      line-height: 1.25;
+      letter-spacing: -.035em;
+      margin: 0;
+    }
+    .quote em { color: #a9caff; font-style: normal; }
+    .principles { display:grid; gap: 13px; }
+    .principle {
+      padding: 22px 24px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255,255,255,.025);
+    }
+    .principle h3 { margin: 0 0 5px; font-size: 1rem; }
+    .principle p { margin: 0; color: var(--muted); font-size: .9rem; }
+
+    /* Experience */
+    .timeline {
+      margin-top: 48px;
+      position: relative;
+      border-left: 1px solid var(--line);
+      margin-left: 10px;
+    }
+    .role {
+      position: relative;
+      padding: 0 0 52px 38px;
+    }
+    .role:last-child { padding-bottom: 0; }
+    .role::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 7px;
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 2px solid var(--accent);
+      box-shadow: 0 0 0 5px rgba(88,166,255,.07);
+    }
+    .role-head {
+      display:flex;
+      justify-content:space-between;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .company { font-weight: 800; font-size: 1.1rem; }
+    .title { color: #c9d9eb; margin-top: 2px; }
+    .period { color: var(--muted); font-size: .82rem; white-space: nowrap; }
+    .location { color: #71849b; font-size: .78rem; margin-top: 2px; }
+    .role ul { margin: 18px 0 0; padding-left: 18px; color: var(--muted); }
+    .role li { margin: 7px 0; }
+    .role.current {
+      padding: 25px;
+      margin-left: 38px;
+      margin-bottom: 45px;
+      border: 1px solid rgba(88,166,255,.18);
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(88,166,255,.07), rgba(124,108,255,.04));
+    }
+    .role.current::before { left: -44px; top: 32px; }
+    .role.current .role-head { margin: 0; }
+
+    /* Focus */
+    .focus-grid {
+      margin-top: 42px;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+    .focus-card {
+      min-height: 210px;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, rgba(255,255,255,.035), rgba(255,255,255,.012));
+    }
+    .icon {
+      width: 40px; height: 40px;
+      display:grid; place-items:center;
+      border-radius: 12px;
+      background: var(--accent-soft);
+      border: 1px solid rgba(88,166,255,.15);
+      color: #9dcbff;
+      font-weight: 900;
+    }
+    .focus-card h3 { margin: 24px 0 7px; font-size: 1.05rem; }
+    .focus-card p { margin: 0; color: var(--muted); font-size: .88rem; }
+
+    /* Skills + Education */
+    .details {
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 16px;
+      margin-top: 42px;
+    }
+    .panel {
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+    }
+    .panel h3 { margin: 0 0 18px; font-size: 1.05rem; }
+    .chips { display:flex; flex-wrap:wrap; gap:8px; }
+    .chip {
+      padding: 8px 11px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #c9d8ea;
+      font-size: .78rem;
+      background: rgba(255,255,255,.02);
+    }
+    .edu + .edu { margin-top: 23px; padding-top: 23px; border-top: 1px solid var(--line); }
+    .edu strong { display:block; }
+    .edu span { color: var(--muted); font-size: .86rem; }
+
+    /* Contact */
+    .contact {
+      text-align:center;
+      padding: 115px 0 90px;
+    }
+    .contact h2 { max-width: 800px; margin: 0 auto; }
+    .contact p { max-width: 620px; margin: 18px auto 0; color: var(--muted); }
+    .contact .actions { justify-content:center; }
+    footer {
+      padding: 25px 0 35px;
+      border-top: 1px solid var(--line);
+      color: #71849b;
+      font-size: .78rem;
+      display:flex;
+      justify-content:space-between;
+      gap: 15px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid, .split, .details { grid-template-columns: 1fr; }
+      .hero { padding-top: 65px; }
+      .hero-card { max-width: 520px; }
+      .impact-grid { grid-template-columns: repeat(2, 1fr); }
+      .focus-grid { grid-template-columns: 1fr; }
+      .split { gap: 40px; }
+    }
+
+    @media (max-width: 650px) {
+      .container { width: min(calc(100% - 28px), var(--max)); }
+      .nav-links { display:none; }
+      .nav-cta { padding: 8px 12px; }
+      .hero { min-height: auto; padding: 60px 0 70px; }
+      h1 { font-size: clamp(3rem, 16vw, 5rem); }
+      section { padding: 75px 0; }
+      .impact-grid { grid-template-columns: 1fr 1fr; gap: 9px; }
+      .impact { padding: 19px; }
+      .impact .number { font-size: 2rem; }
+      .role-head { flex-direction: column; gap: 5px; }
+      .role.current { margin-left: 20px; padding: 21px; }
+      .role.current::before { left: -26px; }
+      .timeline { margin-left: 4px; }
+      .role { padding-left: 27px; }
+      footer { flex-direction: column; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="nav-wrap">
+    <nav class="container">
+      <a class="brand" href="#top">Sagnik<span>.</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#focus">Focus</a>
+        <a href="#education">Education</a>
+      </div>
+      <a class="nav-cta" href="mailto:sagi.rk08@gmail.com">Let's talk</a>
+    </nav>
+  </div>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> Product · Technology · Strategy</div>
+          <h1><span class="gradient">Building products</span> where technology meets business value.</h1>
+          <p class="hero-copy">
+            I'm <strong>Sagnik Dutta</strong>, a Product Thinker and Senior Platform Lead/Product Owner
+            working at the intersection of <strong>product strategy, engineering, and enterprise transformation.</strong>
+          </p>
+          <div class="actions">
+            <a class="btn primary" href="#experience">Explore my journey ↓</a>
+            <a class="btn secondary" href="https://www.linkedin.com/in/sagnik-dutta-product-thinker" target="_blank" rel="noopener">LinkedIn ↗</a>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <div class="orb" aria-hidden="true"></div>
+          <h3>Product thinker. Technology leader.</h3>
+          <p>Focused on simplifying complexity, improving decisions, and creating lasting business impact.</p>
+          <div class="mini-tags">
+            <span class="tag">Product Management</span>
+            <span class="tag">Enterprise Platforms</span>
+            <span class="tag">Generative AI</span>
+            <span class="tag">Agile / Scrum</span>
+            <span class="tag">AWS</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-kicker">Impact at a glance</div>
+        <h2>Outcomes over output.</h2>
+        <p class="section-intro">
+          A decade-plus journey from software engineering and integration architecture toward product leadership,
+          with a bias for measurable outcomes and scalable systems.
+        </p>
+
+        <div class="impact-grid">
+          <div class="impact">
+            <div class="number">10+</div>
+            <p>Years evolving from engineering into product leadership</p>
+          </div>
+          <div class="impact">
+            <div class="number">5</div>
+            <p>Enterprise applications migrated to MuleSoft Runtime Fabric on AWS</p>
+          </div>
+          <div class="impact">
+            <div class="number">50+</div>
+            <p>APIs migrated with zero production disruption</p>
+          </div>
+          <div class="impact">
+            <div class="number">80%+</div>
+            <p>Reduction in reporting cycles</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container split">
+        <div>
+          <div class="section-kicker">Product philosophy</div>
+          <p class="quote">
+            “Great product management isn't measured by the number of features,
+            but by the <em>complexity removed, decisions made easier, and value created.</em>”
+          </p>
+        </div>
+
+        <div class="principles">
+          <div class="principle">
+            <h3>01 — Create clarity</h3>
+            <p>Bring structure to ambiguous problems and align teams around meaningful outcomes.</p>
+          </div>
+          <div class="principle">
+            <h3>02 — Build for scale</h3>
+            <p>Design platforms and capabilities organizations can trust as they grow.</p>
+          </div>
+          <div class="principle">
+            <h3>03 — Connect technology to value</h3>
+            <p>Translate technical possibilities into business impact rather than technology for its own sake.</p>
+          </div>
+          <div class="principle">
+            <h3>04 — Make AI useful</h3>
+            <p>Explore Generative AI and agentic AI as intelligent capabilities that reduce complexity and improve decisions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-kicker">Experience</div>
+        <h2>A career built across the stack.</h2>
+        <p class="section-intro">From hands-on development to enterprise platforms and product ownership.</p>
+
+        <div class="timeline">
+          <article class="role current">
+            <div class="role-head">
+              <div>
+                <div class="company">Publicis Sapient</div>
+                <div class="title">Senior Platform Lead / Product Owner</div>
+                <div class="location">Bengaluru, India</div>
+              </div>
+              <div class="period">Nov 2019 — Present</div>
+            </div>
+            <ul>
+              <li>Led the migration of five enterprise applications and more than fifty APIs to MuleSoft Runtime Fabric on AWS with zero production disruption.</li>
+              <li>Reduced reporting cycles by over 80% and improved delivery across large cross-functional programs.</li>
+              <li>Worked at the intersection of product strategy, engineering, and enterprise transformation.</li>
+            </ul>
+          </article>
+
+          <article class="role">
+            <div class="role-head">
+              <div>
+                <div class="company">Cognizant</div>
+                <div class="title">Senior Software Engineer</div>
+                <div class="location">Bengaluru, India</div>
+              </div>
+              <div class="period">Nov 2015 — Nov 2019</div>
+            </div>
+          </article>
+
+          <article class="role">
+            <div class="role-head">
+              <div>
+                <div class="company">Codeclouds IT Solutions Pvt. Ltd.</div>
+                <div class="title">Software Developer</div>
+                <div class="location">Kolkata Area, India</div>
+              </div>
+              <div class="period">Jun 2014 — Nov 2015</div>
+            </div>
+            <ul>
+              <li>Worked as a full-stack developer in an agile process across a broad range of responsibilities.</li>
+              <li>Built Salesforce CRM lead workflows, brand creation and synchronization automation, and client-data demographic dashboards.</li>
+              <li>Implemented complex content/article workflows spanning publishing houses, reporters, content writers, strategists, and publisher network managers.</li>
+            </ul>
+          </article>
+
+          <article class="role">
+            <div class="role-head">
+              <div>
+                <div class="company">Twinixsoft Consulting &amp; Solution</div>
+                <div class="title">Application Researcher and Developer</div>
+                <div class="location">Kolkata Area, India</div>
+              </div>
+              <div class="period">Mar 2013 — Jun 2014</div>
+            </div>
+            <ul>
+              <li>Worked on a social networking product concept focused on real-life spaces, interests, privacy, personalization, analytics, and recognition.</li>
+              <li>Designed product architecture with the product architect and contributed to UI design, business logic, and end-to-end development.</li>
+            </ul>
+          </article>
+
+          <article class="role">
+            <div class="role-head">
+              <div>
+                <div class="company">CMC LTD</div>
+                <div class="title">Technical Analyst</div>
+              </div>
+              <div class="period">Jul 2012 — Mar 2013</div>
+            </div>
+            <ul>
+              <li>Worked on an ERP product supporting distributors and sales personnel with stock and billing processes.</li>
+              <li>Resolved reported tickets within SLA limits, performed remote troubleshooting, application maintenance, data migration, installation, and backup restoration.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="focus">
+      <div class="container">
+        <div class="section-kicker">What I care about</div>
+        <h2>Where I'm heading next.</h2>
+        <p class="section-intro">
+          Building on an engineering foundation to create AI-native products that connect technology, strategy, and customer value.
+        </p>
+
+        <div class="focus-grid">
+          <div class="focus-card">
+            <div class="icon">01</div>
+            <h3>AI-native products</h3>
+            <p>Exploring how Generative AI and agentic AI can become intelligent capabilities inside enterprise platforms.</p>
+          </div>
+          <div class="focus-card">
+            <div class="icon">02</div>
+            <h3>Enterprise transformation</h3>
+            <p>Turning complex technology landscapes into scalable, dependable platforms that organizations can trust.</p>
+          </div>
+          <div class="focus-card">
+            <div class="icon">03</div>
+            <h3>Decision-centric products</h3>
+            <p>Creating products that make decisions easier, automate complexity, and improve business outcomes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <div class="section-kicker">Capabilities &amp; education</div>
+        <h2>The foundation behind the work.</h2>
+
+        <div class="details">
+          <div class="panel">
+            <h3>Core skills</h3>
+            <div class="chips">
+              <span class="chip">Product Management</span>
+              <span class="chip">Product Ownership</span>
+              <span class="chip">Product Strategy</span>
+              <span class="chip">Enterprise Transformation</span>
+              <span class="chip">Project Management</span>
+              <span class="chip">Request for Proposal (RFP)</span>
+              <span class="chip">Scrum</span>
+              <span class="chip">Generative AI</span>
+              <span class="chip">Agentic AI</span>
+              <span class="chip">AWS</span>
+              <span class="chip">Enterprise Platforms</span>
+              <span class="chip">Integration Architecture</span>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h3>Education &amp; certifications</h3>
+            <div class="edu">
+              <strong>Institute of Product Leadership</strong>
+              <span>Executive MBA, Product Management · Jun 2025 — Dec 2026</span>
+            </div>
+            <div class="edu">
+              <strong>Murshidabad College of Engg. and Tech</strong>
+              <span>B.Tech, Information Technology · 2006 — 2010</span>
+            </div>
+            <div class="edu">
+              <strong>AWS Certified Solutions Architect — Associate</strong>
+              <span>Certification</span>
+            </div>
+            <div class="edu">
+              <strong>AWS Certified Developer — Associate</strong>
+              <span>Certification</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact">
+      <div class="container">
+        <div class="section-kicker">Let's connect</div>
+        <h2>Have a complex product problem worth solving?</h2>
+        <p>
+          I'm interested in conversations around product strategy, enterprise transformation,
+          scalable platforms, and the future of AI-native products.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="mailto:sagi.rk08@gmail.com">Email me ↗</a>
+          <a class="btn secondary" href="tel:+919874383355">Call · 9874389335</a>
+          <a class="btn secondary" href="https://www.linkedin.com/in/sagnik-dutta-product-thinker" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    <span>© <span id="year"></span> Sagnik Dutta</span>
+    <span>Product Thinker · Building Scalable Products</span>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
